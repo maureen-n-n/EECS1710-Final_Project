@@ -18,12 +18,12 @@ void keyPressed() {
       beat_rate += 0.25;
       beat.rate(beat_rate);
       newbeat.sec = int(newbeat.sec - (newbeat.sec * 0.25));
-      println(newbeat.sec);
+      
     } else if (keyCode == DOWN){
         beat_rate -= 0.25;
         beat.rate(beat_rate);
         newbeat.sec = int(newbeat.sec + (newbeat.sec * 0.25));
-        println(newbeat.sec);
+        
     }
   }
   
