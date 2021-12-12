@@ -16,6 +16,7 @@ class Beat {
  
  
   void display() {
+    
     stroke(strokeColor);
     strokeWeight(15);
     noFill();
@@ -30,6 +31,7 @@ class Beat {
       max=max+1; 
       timer = millis();
       strokeColor = color(random(255), random(255), random(255));
+      beat.play();
     }
     
   }

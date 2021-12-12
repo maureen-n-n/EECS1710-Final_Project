@@ -1,8 +1,8 @@
-//Importing Sounds Library and initializing new SoundFile variables
 // beat.wav - https://freesound.org/people/YellowTree/sounds/422679/
 // piano notes - https://freesound.org/people/pinkyfinger/packs/4409/
+//Importing Sounds Library and initializing new SoundFile variables
 import processing.sound.*;
-SoundFile beat, synth, c;
+SoundFile beat, synth, c,d,e,f,g;
 
 
 // initiialize all global variables
@@ -22,6 +22,8 @@ void setup() {
   textSize(30);
   newbeat = new Beat();
   
+  
+  //Initializing Red, Blue, Green, Yellow and Violet Notes
   // Red Note
   red = new Note();
   red.x=0;
@@ -55,28 +57,39 @@ void setup() {
   
   // Initialize audio files
   beat = new SoundFile(this, "beat.wav");
-  synth = new SoundFile(this, "synth.wav");
   c = new SoundFile(this, "c.wav");
-   
-  
+  d = new SoundFile(this, "d.wav");
+  e = new SoundFile(this, "e.wav");
+  f = new SoundFile(this, "f.wav");
+  g = new SoundFile(this, "g.wav");
 
   ellipseMode(CENTER);
   rectMode(CORNER);
-  
-  
-  
-  
+  textAlign(CENTER, CENTER);
+ 
 }
 
 void draw() {
-  //Clear the background with 21 opacity
   background(255);
   
+  // see helper function below draw function
+  display_notes();
+  
   // text instructions 
-  // fill(0);
-  // text("press the space bar to toggle a beat on and off. Press the up and down arrows to control the rate of the beat.", 100, 100, 500, 320);
+  fill(0);
+  text("press the space bar to toggle a beat on and off", width/2, height/2 - 50);
+  text("Press the up and down arrows to control the rate of the beat.", width/2, height/2);
+  text("Press the a, s, d, f and g keys to play notes!", width/2, height/2 + 50);
   
   
+  if (play_beat){
+    // have to display the newbeat here whenever play_beat is toggled to true
+    newbeat.display();   
+  }
+  
+}
+
+void display_notes(){
   if (playing_red){ 
     red.display();
   } else{  
@@ -106,14 +119,4 @@ void draw() {
   } else{
     violet.h=0;
   }
- 
-  
-  
-  if (play_beat){
-    // have to display the newbeat here whenever play_beat is toggled to true
-    newbeat.display();   
-  }
-  
-
-  
 }

@@ -1,11 +1,11 @@
 void keyPressed() {
+  // Actions controlling BEAT
   //detect when space bar is pressed.
   if (key==' ') {
     // when the space bar is pressed, set play_beat to the opposite of whatever it originally was (works as a toggle)
     play_beat = !play_beat;
     if (play_beat){
-      // if play_beat is true, loop beat
-      beat.loop();   
+      // if play_beat set the rate of the beat to whatever beat_rate is   
       beat.rate(beat_rate);
     } else {
       // else, stop playing beat (toggled off)
@@ -27,6 +27,7 @@ void keyPressed() {
     }
   }
   
+  // Actions controlling NOTES
   if (keyCode==65){
     // red bar (press a)
     c.play();
@@ -35,21 +36,25 @@ void keyPressed() {
   
   if (keyCode==83){
     // blue bar (press s)
+    d.play();
     playing_blue=true;
   }  
    
   if (keyCode==68){
     // green bar (press d)
+    e.play();
     playing_green=true;
    }
   
   if (keyCode==70){
     //yellow bar (press f)
+    f.play();
     playing_yellow=true;
   }
   
   if (keyCode==71){
     //violet bar (press g)
+    g.play();
     playing_violet=true;
   }
  
@@ -64,21 +69,25 @@ void keyReleased() {
   
   if (keyCode==83){
     // blue bar
+    d.stop();
     playing_blue=false;
   }
   
   if (keyCode==68){
-     // green bar (press d)
-     playing_green=false;
-   }
+    // green bar (press d)
+    e.stop();
+    playing_green=false;
+  }
    
    if (keyCode==70){
-    //yellow bar (press f)
+    // yellow bar (press f)
+    f.stop();
     playing_yellow=false;
   }
   
   if (keyCode==71){
     //violet bar (press g)
+    g.stop();
     playing_violet=false;
   }
 
