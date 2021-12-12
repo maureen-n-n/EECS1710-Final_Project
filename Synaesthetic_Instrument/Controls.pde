@@ -28,25 +28,37 @@ void keyPressed() {
   }
   
   if (keyCode==65){
-     // red bar (press a)
-     playing_red=true;
+    // red bar (press a)
+    c.play();
+    playing_red=true;
   }
   
   if (keyCode==83){
-      // blue bar (press s)
-      playing_blue=true;
-    }  
+    // blue bar (press s)
+    playing_blue=true;
+  }  
    
-   if (keyCode==68){
-     // green bar (press d)
-     playing_green=true;
+  if (keyCode==68){
+    // green bar (press d)
+    playing_green=true;
    }
+  
+  if (keyCode==70){
+    //yellow bar (press f)
+    playing_yellow=true;
+  }
+  
+  if (keyCode==71){
+    //violet bar (press g)
+    playing_violet=true;
+  }
  
 }
 
 void keyReleased() {
   if (keyCode==65){
     // red bar
+    c.stop();
     playing_red=false;
   }
   
@@ -59,8 +71,15 @@ void keyReleased() {
      // green bar (press d)
      playing_green=false;
    }
+   
+   if (keyCode==70){
+    //yellow bar (press f)
+    playing_yellow=false;
+  }
   
-  
-  
- 
+  if (keyCode==71){
+    //violet bar (press g)
+    playing_violet=false;
+  }
+
 }

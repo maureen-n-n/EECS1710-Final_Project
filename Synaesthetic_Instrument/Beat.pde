@@ -12,7 +12,6 @@ class Beat {
     timer=millis();
     max=0; 
     sec = 1090;
-    //strokeColor = color(random(255), random(0), random(200));
   }
  
  
